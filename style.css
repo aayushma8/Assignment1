@@ -14,149 +14,260 @@ body {
 }
 
 header {
-  padding: 16px;
+  padding: 12px;
   background-color: #007bff; /* Professional blue background */
-  color: white; /* White text color for the header */
+  color: white;
   text-align: center;
 }
 
 .intro {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 h1 {
   font-weight: bold;
-  margin-bottom: 8px;
-  color: #ffffff; /* White text color for the main heading */
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
 h2 {
   margin: 0;
-  margin-bottom: 12px;
-  color: #333; /* Darker color for subheadings */
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
 p {
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
-  display: block;
-  color: #555; /* Darker grey color for paragraph text */
+  margin: 0.5em 0;
 }
 
 section {
-  padding: 16px;
-  position: relative;
-  bottom: 20px;
+  padding: 12px;
 }
 
-/* Mobile-First Design for Small Screens */
+/* Table Styles */
 table {
-  width: 100%; /* Full width for mobile view */
+  width: 100%;
   border-collapse: collapse;
   background-color: #ffffff; /* White background for the table */
-  margin-bottom: 20px;
+  box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.2);
 }
 
 table,
 td,
 th {
-  padding: 12px; /* Adjusted padding for better spacing */
-  border: 1px solid #ccc; /* Lighter border color */
-  text-align: left;
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
 th {
-  background-color: #0056b3; /* Darker blue for table headers */
-  color: white; /* White text color for headers */
+  background-color: #0056b3; /* Dark blue for headers */
+  color: white;
 }
 
 td {
-  font-size: 14px; /* Smaller font size for small screens */
-}
-
-table tr {
-  text-transform: capitalize;
+  font-size: 12px;
 }
 
 table tr:nth-child(even) {
-  background-color: #f9f9f9; /* Light grey background for even rows */
+  background-color: #f9f9f9;
 }
 
 table tr:nth-child(odd) {
-  background-color: #e9ecef; /* Slightly darker grey for odd rows */
+  background-color: #e9ecef;
 }
 
 table tr:nth-child(even) a {
-  text-decoration: none;
   color: #0056b3; /* Blue color for links in even rows */
 }
 
 table tr:nth-child(odd) a {
-  text-decoration: none;
   color: #003d80; /* Darker blue color for links in odd rows */
 }
 
 table tr:nth-child(even) a:hover {
-  text-decoration: underline;
   color: #004085; /* Darker blue for link hover in even rows */
 }
 
 table tr:nth-child(odd) a:hover {
-  text-decoration: underline;
   color: #002752; /* Even darker blue for link hover in odd rows */
 }
 
-/* Responsive Design for Larger Screens */
-@media (min-width: 481px) {
+/* Responsive Design for Smaller Screens */
+@media (max-width: 321px) {
   header {
-    padding: 24px;
+    padding: 10px;
   }
 
   .intro {
-    font-size: 22px;
+    font-size: 12px;
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 14px;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 12px;
+  }
+
+  section {
+    padding: 10px;
   }
 
   table {
-    box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.2);
-    height: auto; /* Adjust height to auto for better fit on larger screens */
+    font-size: 10px; /* Smaller font size for table */
   }
 
-  table,
-  td,
-  th {
-    text-align: center;
-    padding: 16px;
+  table th, table td {
+    padding: 6px; /* Reduced padding for smaller screens */
+  }
+
+  table {
+    display: block;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  table th, table td {
+    display: block;
+    text-align: left;
+    border: none; /* Remove borders for better fit */
+    position: relative;
+    padding-left: 50%; /* Add padding for labels */
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 8px;
+    font-weight: bold;
+    color: #333;
+    background: #f5f5f5;
   }
 }
 
-/* Adjustments for Tablets and Small Desktops */
-@media (min-width: 768px) {
-  table {
-    width: 90%;
-    margin: 0 auto; /* Center table on larger screens */
-  }
-
-  header, section {
-    padding: 24px;
+/* Further Responsive Design for Very Small Screens */
+@media (max-width: 300px) {
+  header {
+    padding: 8px;
   }
 
   .intro {
-    font-size: 22px;
+    font-size: 10px;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 12px;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 10px;
+  }
+
+  section {
+    padding: 8px;
+  }
+
+  table {
+    font-size: 8px; /* Even smaller font size for very small screens */
+  }
+
+  table th, table td {
+    padding: 4px; /* Further reduced padding */
+  }
+
+  table td {
+    padding-left: 40%; /* Adjust padding for very small screens */
+  }
+
+  table td::before {
+    font-size: 8px; /* Smaller font size for labels */
+    padding-left: 4px;
+  }
+}
+
+@media (max-width: 250px) {
+  header {
+    padding: 6px;
+  }
+
+  .intro {
+    font-size: 8px;
+  }
+
+  h1 {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 8px;
+  }
+
+  section {
+    padding: 6px;
+  }
+
+  table {
+    font-size: 6px; /* Further reduced font size for extremely small screens */
+  }
+
+  table th, table td {
+    padding: 2px; /* Minimal padding for very tight screens */
+  }
+
+  table td {
+    padding-left: 30%; /* Adjust padding for very tight screens */
+  }
+
+  table td::before {
+    font-size: 6px; /* Minimal font size for labels */
+    padding-left: 2px;
+  }
+}
+
+@media (max-width: 200px) {
+  header {
+    padding: 4px;
+  }
+
+  .intro {
+    font-size: 6px;
+  }
+
+  h1 {
+    font-size: 8px;
+  }
+
+  h2 {
+    font-size: 6px;
+  }
+
+  section {
+    padding: 4px;
+  }
+
+  table {
+    font-size: 5px; /* Minimal font size for very small screens */
+  }
+
+  table th, table td {
+    padding: 1px; /* Minimal padding for very small screens */
+  }
+
+  table td {
+    padding-left: 20%; /* Adjust padding for very tight screens */
+  }
+
+  table td::before {
+    font-size: 5px; /* Minimal font size for labels */
+    padding-left: 1px;
   }
 }
